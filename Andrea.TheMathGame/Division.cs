@@ -36,7 +36,7 @@ public class Division
         GenerateOperationRandom(); // Genera 3 operazioni iniziali
     }
 
-    int points = 0; // Variabile per tenere traccia del punteggio totale. La inizializzo qui per mantenerla tra le sessioni di gioco e non resettarla ogni volta che inizio il gioco
+    int points; // Variabile per tenere traccia del punteggio totale. La inizializzo qui per mantenerla tra le sessioni di gioco e non resettarla ogni volta che inizio il gioco
     private void GenerateOperationRandom() //metodo privato che genera operazioni casuali
     {
         int magazine = 0;
@@ -62,7 +62,6 @@ public class Division
     {
         string currentDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         _gState.GetPlayerName(currentDate); // Aggiungo la data e l'ora del gioco alla lista
-        Chronology chronology = new Chronology(_gState);
 
         WriteLine("Starting Division Game!\n");
         int score = 0;

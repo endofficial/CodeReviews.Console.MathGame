@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 public class Play 
 {
     // Composizione: Play "ha un" RegToChrono per registrare le partite giocate

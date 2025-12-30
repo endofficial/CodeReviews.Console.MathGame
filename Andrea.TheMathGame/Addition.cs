@@ -35,7 +35,7 @@ public class Addition
         GenerateOperationRandom(3); // Genera 3 operazioni iniziali
     }
 
-    int points = 0; // Variabile per tenere traccia del punteggio totale. La inizializzo qui per mantenerla tra le sessioni di gioco e non resettarla ogni volta che inizio il gioco
+    int points; // Variabile per tenere traccia del punteggio totale. La inizializzo qui per mantenerla tra le sessioni di gioco e non resettarla ogni volta che inizio il gioco
     private void GenerateOperationRandom(int count) //metodo privato che genera operazioni casuali
     {
         for (int i = 0; i < count; i++)
@@ -50,7 +50,6 @@ public class Addition
     {
         string currentDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         _gState.GetPlayerName(currentDate); // Aggiungo la data e l'ora del gioco alla lista
-        Chronology chronology = new Chronology(_gState); 
 
         WriteLine("Starting Addition Game!\n");
         int score = 0;
@@ -104,10 +103,6 @@ public class Addition
             {
                 case "e":
                     WriteLine("\nExiting the game. Goodbye!\n");
-
-                    //in questo modo perdo lo stato del gioco perché creo una nuova istanza di Welcome
-                    /*Welcome back_game = new Welcome();
-                    back_game.StartWelcome();*/
 
                     return; // Esco dal metodo per tornare al menu principale del gioco senza perdere lo stato del gioco
                 case "C" or "c":
